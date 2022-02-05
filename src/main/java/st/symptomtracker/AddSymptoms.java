@@ -1,6 +1,5 @@
 package st.symptomtracker;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.Scanner;
 import java.time.*;
 
@@ -21,10 +20,11 @@ public class AddSymptoms {
             String date = sc.next();
             if (date != null) {
                 DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-                DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
+                DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mma");
                 LocalDate datePart = LocalDate.parse(date, dateFormat);
-                System.out.print("Estimate the time the symptom started (hh:mm:ss): ");
-                String time = sc.next();
+                System.out.print("Estimate the time the symptom started (hh:mm AM/PM): ");
+                String time = sc.next().strip();
+                time = time.replaceAll("\\s+", "");
                 LocalTime timePart = LocalTime.parse(time, timeFormat);
                 onset = LocalDateTime.of(datePart, timePart);
             } else {
