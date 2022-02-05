@@ -25,7 +25,7 @@ public class Symptom {
 
     @Override
     public String toString() {
-        return "Symptom: " + this.name + "; Onset: "
+        return "Name: " + this.name + "; Onset: "
                 + this.onset.toString() + "; Severity: " + this.severity;
     }
 }
