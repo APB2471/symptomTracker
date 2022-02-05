@@ -1,4 +1,4 @@
 package st.symptomtracker;
 
-public class SymptomTracker {
+public class AddToDB {
 }
