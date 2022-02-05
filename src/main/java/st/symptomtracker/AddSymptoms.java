@@ -11,6 +11,8 @@ public class AddSymptoms {
     public AddSymptoms() {
     }
 
+    AddToDB test = new AddToDB();
+
     public void SymptomLoop() {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -35,7 +37,11 @@ public class AddSymptoms {
             int severity = sc.nextInt();
 
             System.out.print("Would you like to add another symptom (yes/no): ");
+
+            // adds data to database
+            test.insert(symptom.getName(), symptom.getOnset(), symptom.getSeverity());
             String another = sc.next();
+
             if (another.equals("no")) {
                 symptom = new Symptom(name, onset, severity);
                 break;
@@ -43,9 +49,5 @@ public class AddSymptoms {
             System.out.println("\n");
         }
         System.out.print("Your symptom is: " + symptom);
-
-        // test, implement into loop
-        AddToDB test = new AddToDB();
-        test.insert(symptom.getName(), symptom.getOnset(), symptom.getSeverity());
     }
 }
