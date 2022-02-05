@@ -9,6 +9,9 @@ public class AddSymptoms {
     Symptom symptom;
 
     public AddSymptoms() {
+    }
+
+    public void SymptomLoop() {
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.print("What Symptom are you experiencing?: ");
@@ -31,9 +34,9 @@ public class AddSymptoms {
             System.out.print("Provide the severity of the symptom from 1-10: ");
             int severity = sc.nextInt();
 
-            System.out.print("Would you like to add another symptom (true/false): ");
-            boolean next = sc.nextBoolean();
-            if (!next) {
+            System.out.println("Would you like to add another symptom (yes/no): ");
+            String another = sc.next();
+            if (another.equals("no")) {
                 symptom = new Symptom(name, onset, severity);
                 break;
             }

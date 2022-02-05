@@ -20,14 +20,21 @@ public class SymptomTracker {
     public void inputLoop() {
         System.out.println("Symptom Tracker V1.0");
         Scanner sc = new Scanner(System.in);
-        System.out.print("To display symptoms, enter d. \nTo add symptoms, enter a.\n-> " );
-        String choice = sc.nextLine();
-        if (choice.equals("a")) {
-            AddSymptoms as = new AddSymptoms();
+        while (true) {
+            System.out.print("To display symptoms, enter 1. \nTo add symptoms, enter 2.\n-> ");
+            String choice = sc.nextLine();
+            if (choice.equals("2")) {
+                AddSymptoms as = new AddSymptoms();
+                as.SymptomLoop();
+                break;
 
-        } else if (choice.equals("d")) {
-            DisplaySymptoms ds = new DisplaySymptoms();
+            } else if (choice.equals("1")) {
+                DisplaySymptoms ds = new DisplaySymptoms();
+                break;
 
+            } else {
+                System.out.println("Incorrect Input, please enter 1 or 2 to select.");
+            }
         }
     }
 }
