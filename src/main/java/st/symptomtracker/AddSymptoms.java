@@ -39,5 +39,9 @@ public class AddSymptoms {
             }
         }
         System.out.print("Your symptom is: " + symptom);
+
+        // test
+        AddToDB test = new AddToDB();
+        test.insert(symptom.getName(), symptom.getOnset(), symptom.getSeverity());
     }
 }
