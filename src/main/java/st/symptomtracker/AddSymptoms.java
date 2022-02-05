@@ -44,7 +44,7 @@ public class AddSymptoms {
         }
         System.out.print("Your symptom is: " + symptom);
 
-        // test
+        // test, implement into loop
         AddToDB test = new AddToDB();
         test.insert(symptom.getName(), symptom.getOnset(), symptom.getSeverity());
     }
