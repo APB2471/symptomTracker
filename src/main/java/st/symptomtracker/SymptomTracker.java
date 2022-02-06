@@ -30,6 +30,7 @@ public class SymptomTracker {
 
             } else if (choice.equals("2")) {
                 DisplaySymptoms ds = new DisplaySymptoms();
+                ds.setVisible(true);
                 break;
 
             } else {
