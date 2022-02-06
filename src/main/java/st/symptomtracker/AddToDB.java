@@ -1,6 +1,5 @@
 package st.symptomtracker;
 
-import com.mongodb.DB;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
