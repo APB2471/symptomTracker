@@ -8,6 +8,10 @@ import org.bson.Document;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author Andrew Bush (apb2471@rit.edu)
+ * @author
+ */
 public class AddToDB {
 
     public void insert(String name, LocalDateTime time, int severity) {

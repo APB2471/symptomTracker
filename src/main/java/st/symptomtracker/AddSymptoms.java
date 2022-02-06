@@ -3,6 +3,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import java.time.*;
 
+/**
+ * @author Andrew Bush (apb2471@rit.edu)
+ * @author
+ */
 public class AddSymptoms {
     LocalDateTime onset;
     Symptom symptom;

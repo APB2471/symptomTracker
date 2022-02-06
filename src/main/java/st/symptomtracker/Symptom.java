@@ -1,6 +1,10 @@
 package st.symptomtracker;
 import java.time.*;
 
+/**
+ * @author Andrew Bush (apb2471@rit.edu)
+ * @author
+ */
 public class Symptom {
     private final String name;
     private final LocalDateTime onset;

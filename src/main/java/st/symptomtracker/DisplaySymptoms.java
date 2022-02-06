@@ -21,12 +21,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.time.*;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Call methods from ReceiveFromDB to get
  * an arraylist of Symptom objects, then
  * construct graphs using JFreeChart.
+ *
+ * @author Andrew Bush (apb2471@rit.edu)
+ * @author
  */
 public class DisplaySymptoms extends JFrame {
 

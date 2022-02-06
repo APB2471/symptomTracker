@@ -7,6 +7,7 @@ import java.util.Scanner;
  * starts when the program is initialized.
  *
  * @author Andrew Bush (apb2471@rit.edu)
+ * @author
  */
 public class SymptomTracker {
     public static void main(String[] args) {
