@@ -131,8 +131,6 @@ public class DisplaySymptoms extends JFrame {
 
         renderer.setSeriesPaint(0, Color.RED);
         renderer.setSeriesStroke(0, new BasicStroke(2.0f));
-        renderer.setSeriesPaint(1, Color.BLUE);
-        renderer.setSeriesStroke(1, new BasicStroke(2.0f));
 
         plot.setRenderer(renderer);
         plot.setBackgroundPaint(Color.white);
@@ -142,7 +140,7 @@ public class DisplaySymptoms extends JFrame {
         chart.getLegend().setFrame(BlockBorder.NONE);
 
         chart.setTitle(new TextTitle("Recorded symptoms over time",
-                        new Font("Serif", Font.BOLD, 18)
+                        new Font("Arial", Font.BOLD, 20)
                 )
         );
 
