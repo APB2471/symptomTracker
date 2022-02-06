@@ -10,21 +10,22 @@ public class AddSymptoms {
     public AddSymptoms() {
     }
 
+    AddToDB test = new AddToDB();
+
     public void SymptomLoop() {
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.print("What Symptom are you experiencing?: ");
             String name = sc.next();
             System.out.print("If the symptom started before now, " +
-                    "enter the date (MM/DD/YYYY): ");
+                    "enter the date (MM/dd/yyyy): ");
             String date = sc.next();
             if (date != null) {
                 DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
                 DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mma");
                 LocalDate datePart = LocalDate.parse(date, dateFormat);
-                sc.nextLine();
-                System.out.print("Estimate the time the symptom started (HH:MM AM/PM): ");
-                String time = sc.nextLine().strip();
+                System.out.print("Estimate the time the symptom started (hh:mm AM/PM): ");
+                String time = sc.next().strip();
                 time = time.replaceAll("\\s+", "");
                 LocalTime timePart = LocalTime.parse(time, timeFormat);
                 onset = LocalDateTime.of(datePart, timePart);
@@ -36,7 +37,11 @@ public class AddSymptoms {
             int severity = sc.nextInt();
 
             System.out.print("Would you like to add another symptom (yes/no): ");
+
+            // adds data to database
+            test.insert(symptom.getName(), symptom.getOnset(), symptom.getSeverity());
             String another = sc.next();
+
             if (another.equals("no")) {
                 symptom = new Symptom(name, onset, severity);
                 break;
@@ -44,9 +49,5 @@ public class AddSymptoms {
             System.out.println("\n");
         }
         System.out.print("Your symptom is: " + symptom);
-
-        // test
-        AddToDB test = new AddToDB();
-        test.insert(symptom.getName(), symptom.getOnset(), symptom.getSeverity());
     }
 }

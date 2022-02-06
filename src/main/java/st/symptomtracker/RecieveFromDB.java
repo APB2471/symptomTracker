@@ -1,8 +1,8 @@
 package st.symptomtracker;
 
 /**
- * Class containing methods to receive symptom data from the
+ * Class containing methods to retrieve symptom data from the
  * mongoDB. Methods will be called from the DisplaySymptoms class.
  */
-public class ReceiveFromDB {
+public class RecieveFromDB {
 }
