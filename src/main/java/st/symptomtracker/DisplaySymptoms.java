@@ -72,6 +72,12 @@ public class DisplaySymptoms extends JFrame {
 
         var series = new XYSeries(cough.getName());
         series.add(0, cough.getSeverity());
+        series.add(1, cough.getSeverity() + 2);
+        series.add(2, cough.getSeverity() + 4);
+        series.add(3, cough.getSeverity());
+        series.add(4, 1);
+        series.add(5, 0);
+        dataset.addSeries(series);
         return dataset;
     }
 
