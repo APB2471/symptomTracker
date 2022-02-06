@@ -7,7 +7,7 @@ import java.util.Scanner;
  * starts when the program is initialized.
  *
  * @author Andrew Bush (apb2471@rit.edu)
- * @author
+ * @author Ryan Ong (rto9185@rit.edu)
  */
 public class SymptomTracker {
     public static void main(String[] args) {
@@ -38,5 +38,7 @@ public class SymptomTracker {
                 System.out.println("Incorrect Input, please enter 1 or 2 to select.");
             }
         }
+        RecieveFromDB display = new RecieveFromDB();
+        display.displayCollection();
     }
 }

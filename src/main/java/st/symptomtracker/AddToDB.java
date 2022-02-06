@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 /**
  * @author Andrew Bush (apb2471@rit.edu)
- * @author
+ * @author Ryan Ong (rto9185@rit.edu)
  */
 public class AddToDB {
 

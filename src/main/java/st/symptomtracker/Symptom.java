@@ -3,7 +3,7 @@ import java.time.*;
 
 /**
  * @author Andrew Bush (apb2471@rit.edu)
- * @author
+ * @author Ryan Ong (rto9185@rit.edu)
  */
 public class Symptom {
     private final String name;
