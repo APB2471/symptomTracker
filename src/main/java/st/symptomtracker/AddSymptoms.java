@@ -26,7 +26,7 @@ public class AddSymptoms {
                 LocalDate datePart = LocalDate.parse(date, dateFormat);
                 sc.nextLine();
                 System.out.print("Estimate the time the symptom started (hh:mm AM/PM): ");
-                String time = sc.next().strip();
+                String time = sc.nextLine().strip();
                 time = time.replaceAll("\\s+", "");
                 LocalTime timePart = LocalTime.parse(time, timeFormat);
                 onset = LocalDateTime.of(datePart, timePart);
@@ -37,14 +37,13 @@ public class AddSymptoms {
             System.out.print("Provide the severity of the symptom from 1-10: ");
             int severity = sc.nextInt();
 
-            System.out.print("Would you like to add another symptom (yes/no): ");
-
+            symptom = new Symptom(name, onset, severity);
             // adds data to database
             test.insert(symptom.getName(), symptom.getOnset(), symptom.getSeverity());
+            System.out.print("Would you like to add another symptom (yes/no): ");
             String another = sc.next();
 
             if (another.equals("no")) {
-                symptom = new Symptom(name, onset, severity);
                 break;
             }
             System.out.println("\n");
