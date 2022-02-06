@@ -2,8 +2,23 @@
 <html>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<h1>Symptom Tracker</h1>
+
+<p>Please add your details</p>>
+<form>
+    Symptom:<br><input type="text" name="symptom">
+    n =  new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+    Date:<br><input type="date" id="start" name="symptom-start"
+        value="date"
+        max="date">
+    Time:<br><input type="time" id="time" name="time">
+    
+
+</form>
 
 </body>
 </html>
