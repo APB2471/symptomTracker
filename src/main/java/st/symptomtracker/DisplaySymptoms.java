@@ -55,11 +55,12 @@ public class DisplaySymptoms extends JFrame {
         ArrayList<Symptom> symptomsList = new ArrayList<>();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mma");
         String onset = "10/22/2021 10:30PM";
-        LocalDateTime date = LocalDateTime.parse(onset);
+        LocalDateTime date = LocalDateTime.parse(onset, format);
         Symptom cough = new Symptom("cough", date, 3);
         symptomsList.add(cough);
-        HashMap<Symptom, ArrayList<Integer>> symptoms = convertToDict(symptomsList);
         var dataset = new XYSeriesCollection();
+        /*
+        HashMap<Symptom, ArrayList<Integer>> symptoms = convertToDict(symptomsList);
         for (Map.Entry<Symptom, ArrayList<Integer>> entry : symptoms.entrySet()) { //Loop through the symptoms in the dictionary;
             var series = new XYSeries(entry.getKey().getName());
             for(Integer timeAfterOnset : entry.getValue()) {
@@ -67,7 +68,10 @@ public class DisplaySymptoms extends JFrame {
             }
             dataset.addSeries(series);
         }
+         */
 
+        var series = new XYSeries(cough.getName());
+        series.add(0, cough.getSeverity());
         return dataset;
     }
 
@@ -106,7 +110,7 @@ public class DisplaySymptoms extends JFrame {
 
         JFreeChart chart = ChartFactory.createXYLineChart(
                 "Recorded Symptoms over time",
-                "Date",
+                "Day",
                 "Severity",
                 dataset,
                 PlotOrientation.VERTICAL,
