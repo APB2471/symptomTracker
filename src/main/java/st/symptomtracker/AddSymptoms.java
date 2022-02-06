@@ -18,14 +18,15 @@ public class AddSymptoms {
             System.out.print("What Symptom are you experiencing?: ");
             String name = sc.next();
             System.out.print("If the symptom started before now, " +
-                    "enter the date (MM/dd/yyyy): ");
+                    "enter the date (MM/DD/YYYY): ");
             String date = sc.next();
             if (date != null) {
                 DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
                 DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mma");
                 LocalDate datePart = LocalDate.parse(date, dateFormat);
-                System.out.print("Estimate the time the symptom started (hh:mm AM/PM): ");
-                String time = sc.next().strip();
+                sc.nextLine();
+                System.out.print("Estimate the time the symptom started (HH:MM AM/PM): ");
+                String time = sc.nextLine().strip();
                 time = time.replaceAll("\\s+", "");
                 LocalTime timePart = LocalTime.parse(time, timeFormat);
                 onset = LocalDateTime.of(datePart, timePart);
