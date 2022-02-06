@@ -38,7 +38,7 @@ public class SymptomTracker {
                 System.out.println("Incorrect Input, please enter 1 or 2 to select.");
             }
         }
-        RecieveFromDB display = new RecieveFromDB();
-        display.displayCollection();
+//        RecieveFromDB display = new RecieveFromDB();
+//        display.displayCollection();
     }
 }
