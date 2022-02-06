@@ -24,6 +24,7 @@ public class AddSymptoms {
                 DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
                 DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mma");
                 LocalDate datePart = LocalDate.parse(date, dateFormat);
+                sc.nextLine();
                 System.out.print("Estimate the time the symptom started (hh:mm AM/PM): ");
                 String time = sc.next().strip();
                 time = time.replaceAll("\\s+", "");
